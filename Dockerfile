@@ -1,3 +1,3 @@
 FROM alpine
-RUN --mount=type=secret,id=github_token \
-  cat /run/secrets/github_token
+RUN --mount=type=secret,id=github_token,target=/root/.npmrc \
+  cat /root/.npmrc
