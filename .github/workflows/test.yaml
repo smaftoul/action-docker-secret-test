@@ -3,6 +3,9 @@ on:
  push:
    branches:
      - main
+
+env:
+  github_token: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   docker:
     runs-on: ubuntu-latest
