@@ -5,7 +5,7 @@ on:
      - main
 
 env:
-  github_token: ${{ secrets.GITHUB_TOKEN }}
+  github_token: "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -13,4 +13,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: build
-      run: docker build . --secret id=github_token,env=github_token
+      run: docker build . --secret id=github_token,env=github_token,target=/root/.npmrc
