@@ -13,4 +13,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: build
-      run: docker build . --secret id=github_token,env=github_token,target=/root/.npmrc
+      run: docker build . --secret id=github_token,env=github_token
